@@ -41,12 +41,28 @@ public class GameEngine implements KeyListener, GameReporter{
 	public void start(){
 		timer.start();
 	}
-	
+	private void generateEnemy(){
+		Enemy e = new Enemy((int)(Math.random()*390), 30);
+		gp.sprites.add(e);
+		enemies.add(e);
+	}
 	
 	
 	private void process(){
-		
-		
+		if(Math.random() < difficulty){
+			generateEnemy();
+		}
+		Iterator<Enemy> e_iter = enemies.iterator();
+		while(e_iter.hasNext()){
+			Enemy e = e_iter.next();
+			e.proceed();
+			
+			if(!e.isAlive()){
+				e_iter.remove();
+				gp.sprites.remove(e);
+				
+			}
+		}
 		
 		gp.updateGameUI(this);
 		
@@ -57,6 +73,9 @@ public class GameEngine implements KeyListener, GameReporter{
 	
 	public void die(){
 		timer.stop();
+	}
+	public long getScore(){
+		return score;
 	}
 	
 	void controlVehicle(KeyEvent e) {
@@ -73,9 +92,7 @@ public class GameEngine implements KeyListener, GameReporter{
 		}
 	}
 
-	public long getScore(){
-		return score;
-	}
+	
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
