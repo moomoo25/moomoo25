@@ -108,7 +108,7 @@ public class GameEngine implements KeyListener, GameReporter{
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		//do nothing
+		//do nothings
 	}
 
 	@Override
