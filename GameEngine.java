@@ -93,6 +93,11 @@ public class GameEngine implements KeyListener, GameReporter{
 		case KeyEvent.VK_D:
 			difficulty += 0.1;
 			break;
+			case KeyEvent.VK_Z:
+				die();
+				break;
+			case KeyEvent.VK_X:
+				start();
 		}
 	}
 
@@ -108,7 +113,7 @@ public class GameEngine implements KeyListener, GameReporter{
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		//do nothings
+		//do nothing
 	}
 
 	@Override
