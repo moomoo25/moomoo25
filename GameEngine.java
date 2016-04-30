@@ -17,7 +17,7 @@ public class GameEngine implements KeyListener, GameReporter{
 	private SpaceShip v;	
 	
 	private Timer timer;
-	public static int i=100;
+	public static int i=1000;
 	private long score = 0;
 	private double difficulty = 0.1;
 	
