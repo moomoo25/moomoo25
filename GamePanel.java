@@ -13,7 +13,7 @@ import java.io.File;
 
 
 public class GamePanel extends JPanel {
-	private int i = 0;
+	private int i = 1;
 	private BufferedImage bi;	
 	Graphics2D big;
 	JLabel background;
